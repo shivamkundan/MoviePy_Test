@@ -112,9 +112,9 @@ finalList=[]
 
 i=im_name
 
-curr_map = ImageClip(i, duration=100)
-curr_map = curr_map.set_start(0)
-curr_map = curr_map.set_position((1920-PIC_W-100, 1080-PIC_H-50))
+curr_map = ImageClip(i, duration=2400)
+curr_map = curr_map.set_start(29)
+curr_map = curr_map.set_position((1920-PIC_W-5, 1080-PIC_H-30))
 finalList.append(curr_map)
 
 # print (finalList)
