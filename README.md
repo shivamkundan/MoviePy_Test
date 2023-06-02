@@ -5,5 +5,5 @@ Video compositing and rendering using Python. Supplement to my dash cam visualiz
 
 ### Work Flow
 <p align="center">
-  <img src="flowchart.png" alt="flowchart" width="50%" height="50%"/>
+  <img src="flowchart.png" alt="flowchart" width="100%" height="100%"/>
 </p>
