@@ -25,7 +25,7 @@ def get_vids(in_dir):
 in_dir="front/"
 vid_list=get_vids(in_dir)
 # FPS=30.0052
-FPS=2
+FPS=1
 
 vid_concat_list=[]
 
@@ -172,7 +172,7 @@ def render_headings(headings, starts, durations):
 		i+=1
 	return headings_list
 
-print ("rendering speed...")
+# print ("rendering speed...")
 # finalList+=render_speed(speeds, starts, durations)
 
 # with open(SPEEDS_FILE, 'wb') as f:
@@ -192,16 +192,22 @@ def unpickle(fil):
 		mynewlist = pickle.load(f)
 	return mynewlist
 
+print ("rendering speed...")
 finalList+=unpickle(SPEEDS_FILE)
-# finalList+=unpickle(SATS_FILE)
+print ("rendering sats...")
+finalList+=unpickle(SATS_FILE)
+print ("rendering headings...")
+finalList+=unpickle(HEADINGS_FILE)
 
-# finalList+=unpickle(HEADINGS_FILE)
+
+print ("rendering tracks...")
+finalList+=unpickle("tracks.pkl")
 
 
 final_video = CompositeVideoClip(finalList)
 
 final_video.write_videofile(f"merged_&_composited_{FPS}fps.mp4",
-	threads = 6,
+	threads = 10,
 	audio=False,)
 	# remove_temp=True,
 	# codec="mpeg4")
